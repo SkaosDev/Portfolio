@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 
 const NAV_LINKS = [
-    { label: "Accueil", href: "#home" },
-    { label: "Projets", href: "#projects" },
-    { label: "À propos", href: "#about" },
+    { label: "accueil", href: "#home" },
+    { label: "projets", href: "#projects" },
+    { label: "à propos", href: "#about" },
 ];
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
     const panelRef = useRef(null);
+    const navRef = useRef(null);
 
-    // Fermer avec Escape
     useEffect(() => {
         function onKeyDown(e) {
             if (e.key === "Escape") setOpen(false);
@@ -19,7 +19,6 @@ export default function Navbar() {
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [open]);
 
-    // Bloquer le scroll du body quand le menu est ouvert
     useEffect(() => {
         document.body.style.overflow = open ? "hidden" : "";
         return () => {
@@ -27,45 +26,74 @@ export default function Navbar() {
         };
     }, [open]);
 
-    // Focus sur le panel à l’ouverture (accessibilité de base)
     useEffect(() => {
         if (open) panelRef.current?.focus();
     }, [open]);
 
-    function close() {
+    useEffect(() => {
+        const setVar = () => {
+            const el = navRef.current;
+            const height = el ? `${el.offsetHeight}px` : getComputedStyle(document.documentElement).getPropertyValue('--navbar-height') || '64px';
+            document.documentElement.style.setProperty('--navbar-height', height);
+        };
+
+        setVar();
+
+        let ro;
+        if (typeof ResizeObserver !== "undefined") {
+            ro = new ResizeObserver(setVar);
+            if (navRef.current) ro.observe(navRef.current);
+        }
+
+        window.addEventListener('resize', setVar);
+
+        return () => {
+            if (ro) ro.disconnect();
+            window.removeEventListener('resize', setVar);
+        };
+    }, []);
+
+    function close(id) {
         setOpen(false);
+        if (!id) return;
+        setTimeout(() => {
+            const target = document.getElementById(id);
+            if (!target) return;
+            const navbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-height'), 10) || 0;
+            const top = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }, 80);
     }
 
     return (
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-white/90 backdrop-blur">
-            <nav className="mx-auto flex max-w-6xl items-center justify-between p-6">
-                {/* Brand */}
-                <a href="#home" className="grid place-items-center rounded-full bg-black text-white transition hover:bg-blue-800 px-6 py-4 text-sm font-light whitespace-nowrap"
+        <>
+        <header ref={navRef} className="sticky top-0 z-50 border-white/10 font-satoshi">
+            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 sm:p-8 md:p-10 ">
+                <a href="#home"
+                   className="grid place-items-center rounded-full bg-black text-white transition hover:bg-blue-800 px-6 py-4 whitespace-nowrap"
                 >
-                    <span className="relative top-[1px] leading-none">Clément Royer</span>
+                    <span className="relative leading-none">clément royer.</span>
                 </a>
 
-                {/* Desktop links */}
                 <div className="hidden items-center gap-10 md:flex">
                     {NAV_LINKS.map((l) => (
                         <a
                             key={l.href}
                             href={l.href}
-                            className="font-light relative top-[1px] text-sm text-black transition hover:text-blue-800 whitespace-nowrap"
+                            className="relative text-black transition hover:text-blue-800 whitespace-nowrap"
                         >
                             {l.label}
                         </a>
                     ))}
                     <a
                         href="#contact"
-                        onClick={close}
-                        className="grid w-full place-items-center rounded-full bg-black text-white transition hover:bg-blue-800 p-4 px-6 text-sm font-light whitespace-nowrap"
+                        onClick={() => setOpen(false)}
+                        className="grid w-full place-items-center rounded-full bg-black text-white transition hover:bg-blue-800 p-4 px-6 whitespace-nowrap"
                     >
-                        <span className="relative top-[1px] leading-none">Me contacter</span>
+                        <span className="relative leading-none">me contacter</span>
                     </a>
                 </div>
 
-                {/* Mobile burger */}
                 <button
                     type="button"
                     className="inline-flex items-center justify-center rounded-full bg-black p-3 text-white transition md:hidden"
@@ -74,11 +102,10 @@ export default function Navbar() {
                     aria-expanded={open}
                     onClick={() => setOpen(true)}
                 >
-                    <BurgerIcon />
+                    <BurgerIcon/>
                 </button>
             </nav>
 
-            {/* Offcanvas mobile (plein écran) */}
             <div
                 className={[
                     "fixed inset-0 z-[60] md:hidden",
@@ -87,17 +114,15 @@ export default function Navbar() {
                 ].join(" ")}
                 aria-hidden={!open}
             >
-                {/* Backdrop */}
                 <div
                     className={[
-                        "absolute inset-0 bg-black/30", // <- ajoute un voile sinon c'est brut
+                        "absolute inset-0 bg-black/30",
                         "transition-opacity duration-300",
                         open ? "opacity-100" : "opacity-0",
                     ].join(" ")}
-                    onClick={close}
+                    onClick={() => close()}
                 />
 
-                {/* Panel (statique, pas d'animation) */}
                 <div
                     role="dialog"
                     aria-modal="true"
@@ -105,25 +130,24 @@ export default function Navbar() {
                     ref={panelRef}
                     className="absolute inset-0 bg-white text-black outline-none"
                 >
-                    <div className="flex h-screen bg-white flex-col px-6">
-                        {/* Top row - FIXE (pas d'animation) */}
-                        <div className="flex items-center justify-between py-6">
-                            <a href="#home" className="grid place-items-center rounded-full bg-black text-white transition hover:bg-blue-800 px-6 py-4 text-sm font-light whitespace-nowrap"
+                    <div className="flex h-screen bg-white flex-col px-6 sm:px-8 md:px-10">
+                        <div className="flex items-center justify-between py-6 sm:py-8 md:py-10">
+                            <a href="#home" onClick={() => close('home')}
+                               className="grid place-items-center rounded-full bg-black text-white px-6 py-4 whitespace-nowrap"
                             >
-                                <span className="relative top-[1px] leading-none">Clément Royer</span>
+                                <span className="relative leading-none">clément royer.</span>
                             </a>
 
                             <button
                                 type="button"
                                 className="inline-flex items-center justify-center rounded-full bg-black text-white p-3 transition"
                                 aria-label="Fermer le menu"
-                                onClick={close}
+                                onClick={() => close()}
                             >
-                                <CloseIcon />
+                                <CloseIcon/>
                             </button>
                         </div>
 
-                        {/* Contenu - ANIMÉ seulement */}
                         <div
                             className={[
                                 "flex flex-1 flex-col items-start justify-center",
@@ -136,8 +160,8 @@ export default function Navbar() {
                                     <li key={l.href}>
                                         <a
                                             href={l.href}
-                                            onClick={close}
-                                            className="block text-4xl font-semibold tracking-tight text-black transition hover:text-blue-800"
+                                            onClick={() => close(l.href.slice(1))}
+                                            className="block text-4xl font-normal tracking-tight text-black"
                                         >
                                             {l.label}
                                         </a>
@@ -146,35 +170,56 @@ export default function Navbar() {
                                 <li>
                                     <a
                                         href="#contact"
-                                        onClick={close}
-                                        className="block text-4xl font-semibold tracking-tight text-black transition hover:text-blue-800"
+                                        onClick={() => close('contact')}
+                                        className="block text-4xl font-normal tracking-tight text-black"
                                     >
-                                        Me contacter
+                                        me contacter
                                     </a>
                                 </li>
                             </ul>
 
                         </div>
 
-                        {/* Footer (optionnel) : si tu veux qu'il ne bouge pas, laisse-le ici hors du bloc animé */}
-                        <div className="py-6 text-sm text-black/60">
+                        <div className="py-6 text-sm text-black/60 ">
                             <div className="flex items-center justify-between">
-                                <span>© {new Date().getFullYear()} Clément Royer</span>
-                                <span className="xs:inline">Insta Mail Linkedin</span>
+                                <span>© {new Date().getFullYear()} clément royer</span>
+                                <span className="xs:inline flex gap-2">
+                                    <a target="_blank" href="https://instagram.com/clement_levrai">
+                                        <div className="icon-small icon-instagram bg-black/60"></div>
+                                    </a>
+                                    <a target="_blank" href="https://linkedin.com/in/clementroyer2007">
+                                        <div className="icon-small icon-linkedin bg-black/60"></div>
+                                    </a>
+                                    <a target="_blank" href="mailto:clement@royer-perso.fr">
+                                        <div className="icon-small icon-mail bg-black/60"></div>
+                                    </a>
+                                    <a target="_blank" href="https://github.com/SkaosDev">
+                                        <div className="icon-small icon-github bg-black/60"></div>
+                                    </a>
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
+        <div className="gradient-blur">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        </>
     );
 }
 
 function BurgerIcon() {
     return (
         <svg
-            width="22"
-            height="22"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
             fill="none"
             aria-hidden="true"
@@ -189,8 +234,8 @@ function BurgerIcon() {
 function CloseIcon() {
     return (
         <svg
-            width="22"
-            height="22"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
             fill="none"
             aria-hidden="true"

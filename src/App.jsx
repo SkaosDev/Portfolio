@@ -5,11 +5,11 @@ function App() {
     return (
         <div className="min-h-screen bg-white text-black">
             <Navbar />
-            <main className="mx-auto max-w-6xl px-6 py-16">
-                <section id="home" className="py-24">Home</section>
-                <section id="projects" className="py-24">Projects</section>
-                <section id="about" className="py-24">About</section>
-                <section id="contact" className="py-24">Contact</section>
+            <main className="mx-auto max-w-7xl px-6 sm:px-8 md:px-10">
+                <section id="home" className="pb-40">accueil</section>
+                <section id="projects" className="py-40">projets</section>
+                <section id="about" className="py-40">à propos</section>
+                <section id="contact" className="py-40">me contacter</section>
             </main>
         </div>
     );
