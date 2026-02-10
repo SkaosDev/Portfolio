@@ -1,5 +1,6 @@
 import './App.css'
 import Navbar from "./components/Navbar.jsx";
+import CustomCursor from "./components/CustomCursor.jsx";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
                 <section id="about" className="py-40">à propos</section>
                 <section id="contact" className="py-40">me contacter</section>
             </main>
+            <CustomCursor />
         </div>
     );
 }

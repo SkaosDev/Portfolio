@@ -70,7 +70,7 @@ export default function Navbar() {
         <header ref={navRef} className="sticky top-0 z-50 border-white/10 font-satoshi">
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 sm:p-8 md:p-10 ">
                 <a href="#home"
-                   className="grid place-items-center rounded-full bg-black text-white transition hover:bg-blue-800 px-6 py-4 whitespace-nowrap"
+                   className="grid place-items-center rounded-full bg-black text-white px-6 py-4 whitespace-nowrap"
                 >
                     <span className="relative leading-none">clément royer.</span>
                 </a>
@@ -80,7 +80,7 @@ export default function Navbar() {
                         <a
                             key={l.href}
                             href={l.href}
-                            className="relative text-black transition hover:text-blue-800 whitespace-nowrap"
+                            className="relative text-black whitespace-nowrap"
                         >
                             {l.label}
                         </a>
@@ -88,7 +88,7 @@ export default function Navbar() {
                     <a
                         href="#contact"
                         onClick={() => setOpen(false)}
-                        className="grid w-full place-items-center rounded-full bg-black text-white transition hover:bg-blue-800 p-4 px-6 whitespace-nowrap"
+                        className="grid w-full place-items-center rounded-full bg-black text-white p-4 px-6 whitespace-nowrap"
                     >
                         <span className="relative leading-none">me contacter</span>
                     </a>

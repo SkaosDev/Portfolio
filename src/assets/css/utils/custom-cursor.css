@@ -1,0 +1,22 @@
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease-out;
+    mix-blend-mode: difference;
+}
+
+.custom-cursor.pointer {
+    transform: translate(-50%, -50%) scale(3);
+}
+
+@media (min-width: 768px) and (pointer: fine) {
+    * {
+        cursor: none !important;
+    }
+}
