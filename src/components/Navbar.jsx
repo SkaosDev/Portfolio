@@ -149,7 +149,7 @@ export default function Navbar() {
 
     return (
         <>
-            <header ref={navRef} className="sticky top-0 z-50 border-white/10 font-satoshi">
+            <header ref={navRef} className="sticky top-0 bg-transparent z-50 border-white/10 font-satoshi">
                 <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 sm:p-8 md:p-10">
                     <a href="#home" className="grid place-items-center rounded-full bg-black text-white px-6 py-4 text-xl whitespace-nowrap">
                         <span className="relative leading-none">clément royer.</span>
@@ -240,13 +240,13 @@ export default function Navbar() {
                                 <ul className="space-y-8 mb-5">
                                     {NAV_LINKS.map((l) => (
                                         <li key={l.href}>
-                                            <a href={l.href} onClick={() => close(l.href.slice(1))} className="block text-4xl font-normal tracking-tight text-black">
+                                            <a href={l.href} onClick={() => close(l.href.slice(1))} className="block text-5xl font-normal tracking-tight text-black">
                                                 {l.label}
                                             </a>
                                         </li>
                                     ))}
                                     <li>
-                                        <a href="#contact" onClick={() => close('contact')} className="block text-4xl font-normal tracking-tight text-black">
+                                        <a href="#contact" onClick={() => close('contact')} className="block text-5xl font-normal tracking-tight text-black">
                                             me contacter
                                         </a>
                                     </li>

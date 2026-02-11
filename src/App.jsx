@@ -4,7 +4,7 @@ import CustomCursor from "./components/CustomCursor.jsx";
 
 function App() {
     return (
-        <div className="min-h-screen bg-white text-black">
+        <div className="bg-transparent min-h-[100dvh] text-black">
             <Navbar />
             <main className="mx-auto max-w-7xl px-6 sm:px-8 md:px-10">
                 <section id="home">
@@ -15,7 +15,7 @@ function App() {
                             <div className="cercle bg-black"></div>
                         </div>
                         <h2 className="text-8xl font-light">clément royer.</h2>
-                        <p className="font-extralight text-4xl max-w-2/3">Je code des espaces où les gens se retrouvent, s’amusent et s’entraident.</p>
+                        <p className="font-extralight text-4xl max-w-2/3">je code des espaces où les gens se retrouvent, s’amusent et s’entraident.</p>
                     </div>
                 </section>
                 <section id="projects" className="">projets</section>
