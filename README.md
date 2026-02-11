@@ -2,6 +2,8 @@
 
 Portfolio personnel de Clément ROYER.
 
+![Aperçu du portfolio](./readmecontent/homesection.png)
+
 ## 🚀 Technologies
 
 - React

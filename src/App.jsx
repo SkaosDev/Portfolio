@@ -8,7 +8,6 @@ function App() {
             <Navbar />
             <main className="mx-auto max-w-7xl px-6 sm:px-8 md:px-10">
                 <section id="home">
-
                     <div className="absolute bottom-6 sm:bottom-8 md:bottom-10">
                         <div className="draw flex mb-5">
                             <div className="demi-cercle bg-orange-custom"></div>
