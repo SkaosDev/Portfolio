@@ -3,6 +3,9 @@
     position: relative;
     overflow: hidden;
 }
+#citation{
+    min-height: calc((100dvh - var(--navbar-height)) * 1.75);
+}
 
 .bg-orange-custom {
     background-color: var(--orange);
@@ -11,14 +14,52 @@
     background-color: var(--yellow);
 }
 
+:root{
+    --normal-size: 200px;
+    --big-size: 350px;
+}
+
+@media only screen and (max-width: 767px) {
+    :root{
+        --normal-size: 150px;
+        --big-size: 300px;
+    }
+}
+
+@media only screen and (max-width: 639px) {
+    :root{
+        --normal-size: 130px;
+        --big-size: 225px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    :root{
+        --normal-size: 130px;
+        --big-size: 175px;
+    }
+}
+
 .demi-cercle{
-    height: 200px;
+    height: var(--normal-size);
     aspect-ratio: 1/2;
-    border-radius: 100px 0 0 100px;
+    border-radius: calc(var(--normal-size) / 2) 0 0 calc(var(--normal-size) / 2);
+}
+
+.big-demi-cercle{
+    height: var(--big-size);
+    aspect-ratio: 1/2;
+    border-radius: calc(var(--big-size) / 2) 0 0 calc(var(--big-size) / 2);
+}
+
+.big-cercle{
+    height: var(--big-size);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
 }
 
 .cercle{
-    height: 200px;
+    height: var(--normal-size);
     aspect-ratio: 1/1;
     border-radius: 50%;
 }

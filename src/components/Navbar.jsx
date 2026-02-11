@@ -253,7 +253,7 @@ export default function Navbar() {
                                 </ul>
                             </div>
 
-                            <div className="py-6 text-sm text-black/60">
+                            <div className="pb-12 pt-0 text-sm text-black/60">
                                 <div className="flex items-center justify-between">
                                     <span>© {new Date().getFullYear()} clément royer</span>
                                     <span className="xs:inline flex gap-2">
