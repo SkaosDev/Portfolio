@@ -17,7 +17,7 @@ export default function Footer() {
                 </div>
 
                 {/* Réseaux sociaux */}
-                <div className="flex items-center justify-between flex-wrap gap-4">
+                <div className="flex items-center justify-between flex-wrap gap-4 font-satoshi">
                     <p className="text-sm text-black/60">
                         © {new Date().getFullYear()} clément royer
                     </p>

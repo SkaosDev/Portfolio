@@ -10,8 +10,8 @@
 .bg-orange-custom {
     background-color: var(--orange);
 }
-.bg-yellow-custom {
-    background-color: var(--yellow);
+.bg-pink-custom {
+    background-color: var(--pink);
 }
 
 :root{
