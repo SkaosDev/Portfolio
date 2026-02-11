@@ -1,5 +1,6 @@
 import './App.css'
 import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
 import CustomCursor from "./components/CustomCursor.jsx";
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
                             <div className="cercle bg-black"></div>
                         </div>
                         <h2 className="text-6xl sm:text-7xl md:text-8xl font-normal md:font-light">clément royer.</h2>
-                        <p className="font-extralight text-2xl sm:text-3xl md:text-4xl sm:max-w-2/3">je code des espaces où les gens se retrouvent, s’amusent et s’entraident.</p>
+                        <p className="font-extralight text-2xl sm:text-3xl md:text-4xl sm:max-w-2/3">je crée des espaces où les gens se retrouvent, s’amusent et s’entraident.</p>
                     </div>
                 </section>
                 <section id="citation" className="flex justify-center items-end flex-col text-right">
@@ -29,10 +30,11 @@ function App() {
                     </div>
                     <p className="z-2 font-satoshi sm:text-lg">— Steve Jobs</p>
                 </section>
-                <section id="projects" className="">projets</section>
-                <section id="about" className="py-40">à propos</section>
-                <section id="contact" className="py-40">me contacter</section>
+                <section id="projects" className="mb-80">projets</section>
+                <section id="about" className="mb-80">à propos</section>
+                <section id="contact" className="mb-80">me contacter</section>
             </main>
+            <Footer />
             <CustomCursor />
         </div>
     );
