@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <footer className="w-full border-0 bg-white">
-            <div className="mx-auto max-w-7xl px-6 sm:px-8 md:px-10 py-12">
+            <div className="mx-auto max-w-7xl p-6 sm:p-8 md:p-10 py-12">
                 {/* Séparateur rayé */}
                 <div className="mb-10 h-[2px] w-full bg-repeating-linear-gradient bg-[length:40px_2px]"
                      style={{
