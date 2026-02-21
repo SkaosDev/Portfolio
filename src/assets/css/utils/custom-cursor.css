@@ -7,12 +7,14 @@
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    transition: transform 0.2s ease-out;
+    transition: width 0.2s cubic-bezier(0.25, 0.1, 0.25, 1),
+                height 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
     mix-blend-mode: difference;
 }
 
 .custom-cursor.pointer {
-    transform: translate(-50%, -50%) scale(3);
+    width: 60px;
+    height: 60px;
 }
 
 @media (min-width: 768px) and (pointer: fine) {
