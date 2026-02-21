@@ -87,7 +87,7 @@ function useAdaptiveColors(refs, enabled = true) {
     return colors;
 }
 
-export default function Navbar() {
+export default function Navbar({ onClickRef }) {
     const [open, setOpen] = useState(false);
     const panelRef = useRef(null);
     const navRef = useRef(null);
@@ -151,7 +151,7 @@ export default function Navbar() {
         <>
             <header ref={navRef} className="sticky top-0 bg-transparent z-50 border-white/10 font-satoshi">
                 <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 sm:p-8 md:p-10">
-                    <a href="#home" className="grid place-items-center rounded-full bg-black text-white px-6 py-4 text-xl whitespace-nowrap">
+                    <a href="#home" onClick={() => onClickRef("home")} className="grid place-items-center rounded-full bg-black text-white px-6 py-4 text-xl whitespace-nowrap">
                         <span className="relative leading-none">clément royer.</span>
                     </a>
 
@@ -160,6 +160,7 @@ export default function Navbar() {
                             <a
                                 key={l.href}
                                 href={l.href}
+                                onClick={() => onClickRef("home")}
                                 ref={(el) => { linkRefs.current[i].current = el; }}
                                 className="relative text-xl whitespace-nowrap"
                                 style={{
@@ -172,7 +173,7 @@ export default function Navbar() {
                         ))}
                         <a
                             href="#contact"
-                            onClick={() => setOpen(false)}
+                            onClick={() => {setOpen(false);onClickRef("home")}}
                             className="grid w-full place-items-center rounded-full bg-black text-white text-xl p-4 px-6 whitespace-nowrap"
                         >
                             <span className="relative leading-none">me contacter</span>
@@ -217,7 +218,7 @@ export default function Navbar() {
                     >
                         <div className="flex h-screen bg-white flex-col px-6 sm:px-8 md:px-10">
                             <div className="flex items-center justify-between py-6 sm:py-8 md:py-10">
-                                <a href="#home" onClick={() => close('home')} className="grid place-items-center rounded-full bg-black text-white text-xl px-6 py-4 whitespace-nowrap">
+                                <a href="#home" onClick={() => {close('home');onClickRef("home")}} className="grid place-items-center rounded-full bg-black text-white text-xl px-6 py-4 whitespace-nowrap">
                                     <span className="relative leading-none">clément royer.</span>
                                 </a>
                                 <button
@@ -240,13 +241,13 @@ export default function Navbar() {
                                 <ul className="space-y-8 mb-5">
                                     {NAV_LINKS.map((l) => (
                                         <li key={l.href}>
-                                            <a href={l.href} onClick={() => close(l.href.slice(1))} className="block text-5xl font-normal tracking-tight text-black">
+                                            <a href={l.href} onClick={() => {close(l.href.slice(1));onClickRef("home")}} className="block text-5xl font-normal tracking-tight text-black">
                                                 {l.label}
                                             </a>
                                         </li>
                                     ))}
                                     <li>
-                                        <a href="#contact" onClick={() => close('contact')} className="block text-5xl font-normal tracking-tight text-black">
+                                        <a href="#contact" onClick={() => {close('contact');onClickRef("home")}} className="block text-5xl font-normal tracking-tight text-black">
                                             me contacter
                                         </a>
                                     </li>

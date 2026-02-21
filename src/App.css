@@ -6,6 +6,9 @@
 #citation{
     min-height: calc((100dvh - var(--navbar-height)) * 1.75);
 }
+#notfound{
+    min-height: calc(100dvh - var(--navbar-height));
+}
 
 .bg-orange-custom {
     background-color: var(--orange);
