@@ -88,10 +88,49 @@ function App() {
                         title={"coupe de robotique"}
                         startDate={"2025"}
                         endDate={"aujourd'hui"}
-                        description={"Concevoir des robots pour relever des défis techniques concrets."}
+                        description={"concevoir des robots pour relever des défis techniques concrets."}
                         technologies={["python", "cpp", "html", "css", "js"]}
                         shape={["demi-cercle-reverse", "demi-cercle", "losange"]}
                         color={["black", "orange", "pink"]}
+                    />
+                </main>
+            ) : page === "rocksmaths" ? (
+                <main className="mx-auto max-w-7xl px-6 sm:px-8 md:px-10">
+                    <ProjectHeader
+                        projectId={"rocksmaths"}
+                        title={"rock's maths"}
+                        startDate={"2024"}
+                        endDate={"aujourd'hui"}
+                        description={"le site web qui rend les mathématiques amusantes et accessibles."}
+                        technologies={["react", "express", "mongodb", "node", "html", "css", "js", "bootstrap"]}
+                        shape={["triangle", "demi-losange", "demi-losange"]}
+                        color={["pink", "black", "orange"]}
+                    />
+                </main>
+            ) : page === "montaeleves" ? (
+                <main className="mx-auto max-w-7xl px-6 sm:px-8 md:px-10">
+                    <ProjectHeader
+                        projectId={"montaeleves"}
+                        title={"monta élèves"}
+                        startDate={"2022"}
+                        endDate={"2024"}
+                        description={"la plateforme d'entraide ultime pour les élèves de mon lycée."}
+                        technologies={["php", "mysql", "html", "css", "js", "bootstrap"]}
+                        shape={["demi-cercle-reverse", "cercle", "demi-losange-reverse"]}
+                        color={["black", "pink", "orange"]}
+                    />
+                </main>
+            ) : page === "mythikia" ? (
+                <main className="mx-auto max-w-7xl px-6 sm:px-8 md:px-10">
+                    <ProjectHeader
+                        projectId={"mythikia"}
+                        title={"mythikia"}
+                        startDate={"2021"}
+                        endDate={"2022"}
+                        description={"un serveur minecraft moddé unique, mêlant aventure et communauté."}
+                        technologies={["php", "mysql", "html", "css", "js", "bootstrap"]}
+                        shape={["demi-cercle-reverse", "demi-cercle-reverse", "triangle-reverse"]}
+                        color={["orange", "pink", "black"]}
                     />
                 </main>
             ) : (

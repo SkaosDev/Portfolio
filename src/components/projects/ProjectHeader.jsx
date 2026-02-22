@@ -57,7 +57,7 @@ export default function ProjectHeader(
                 </div>
                 <h2 className="text-5xl sm:text-6xl md:text-7xl font-light">{title}</h2>
                 <p className="text-lg sm:text-xl md:text-2xl font-satoshi font-light sm:max-w-2/3">{description}</p>
-                <ul className="mt-2 flex flex-wrap flex-row gap-2">
+                <ul className="mt-3 flex flex-wrap flex-row gap-2">
                     <p className="italic font-satoshi font-normal">{startDate} - {endDate}</p>
                     <span className="font-normal mx-1">⋅</span>
                     {techList.map(tech => (
