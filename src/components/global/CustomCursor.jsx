@@ -35,7 +35,8 @@ function CustomCursor() {
 
             for (let i = 0; i < 10 && element && element !== document.body; i++) {
                 const tagName = element.tagName;
-                if (tagName === 'A' || tagName === 'BUTTON') {
+                const classes = element.classList;
+                if (tagName === 'A' || tagName === 'BUTTON' || classes.contains('page-button')) {
                     isClickable = true;
                     break;
                 }

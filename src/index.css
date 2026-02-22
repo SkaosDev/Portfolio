@@ -161,6 +161,67 @@
     -webkit-mask: url('/src/assets/icons/envelope.svg') no-repeat center / contain;
 }
 
+.icon-react {
+    mask: url('/src/assets/icons/technologies/react.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/react.svg') no-repeat center / contain;
+}
+.icon-bootstrap {
+    mask: url('/src/assets/icons/technologies/bootstrap.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/bootstrap.svg') no-repeat center / contain;
+}
+.icon-cpp {
+    mask: url('/src/assets/icons/technologies/cpp.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/cpp.svg') no-repeat center / contain;
+}
+.icon-css {
+    mask: url('/src/assets/icons/technologies/css.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/css.svg') no-repeat center / contain;
+}
+.icon-electron {
+    mask: url('/src/assets/icons/technologies/electron.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/electron.svg') no-repeat center / contain;
+}
+.icon-express {
+    mask: url('/src/assets/icons/technologies/express.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/express.svg') no-repeat center / contain;
+}
+.icon-html {
+    mask: url('/src/assets/icons/technologies/html.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/html.svg') no-repeat center / contain;
+}
+.icon-java {
+    mask: url('/src/assets/icons/technologies/java.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/java.svg') no-repeat center / contain;
+}
+.icon-js {
+    mask: url('/src/assets/icons/technologies/js.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/js.svg') no-repeat center / contain;
+}
+.icon-mongodb {
+    mask: url('/src/assets/icons/technologies/mongodb.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/mongodb.svg') no-repeat center / contain;
+}
+.icon-mysql {
+    mask: url('/src/assets/icons/technologies/mysql.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/mysql.svg') no-repeat center / contain;
+}
+.icon-node {
+    mask: url('/src/assets/icons/technologies/node.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/node.svg') no-repeat center
+}
+.icon-php {
+    mask: url('/src/assets/icons/technologies/php.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/php.svg') no-repeat center / contain;
+}
+.icon-python {
+    mask: url('/src/assets/icons/technologies/python.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/python.svg') no-repeat center / contain;
+}
+.icon-tailwindcss {
+    mask: url('/src/assets/icons/technologies/tailwindcss.svg') no-repeat center / contain;
+    -webkit-mask: url('/src/assets/icons/technologies/tailwindcss.svg') no-repeat center / contain;
+}
+
 :root {
     --navbar-height: 129px;
     --orange: color(display-p3 .99 .4 .02);

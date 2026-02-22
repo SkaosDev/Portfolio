@@ -2,7 +2,7 @@ export default function ProjectCard({ id, title, startDate, endDate, onClickRef 
     return (
         <details className="py-8" onClick={() => onClickRef(id, true)}>
             <summary
-                className="flex cursor-pointer items-center justify-between gap-4 font-medium text-black">
+                className="flex page-button cursor-pointer items-center justify-between gap-4 font-medium text-black">
                 <span className="flex flex-col sm:flex-row sm:items-center mt-1">
                     <span className="text-2xl/6 sm:text-3xl/7 font-extralight">{title}</span>
                     <span className="text-sm sm:text-base sm:ml-10 font-satoshi italic">{startDate} - {endDate}</span>

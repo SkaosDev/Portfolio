@@ -4,6 +4,7 @@ import Footer from "./components/global/Footer.jsx";
 import CustomCursor from "./components/global/CustomCursor.jsx";
 import ProjectCard from "./components/home/ProjectCard.jsx";
 import {useState} from "react";
+import ProjectHeader from "./components/projects/ProjectHeader.jsx";
 
 function App() {
     const [page, setPage] = useState("home");
@@ -51,14 +52,14 @@ function App() {
                                 id={"cdr"}
                                 title={"coupe de robotique"}
                                 startDate={"2025"}
-                                endDate={"Aujourd'hui"}
+                                endDate={"aujourd'hui"}
                                 onClickRef={handlePageChange}
                             />
                             <ProjectCard
                                 id={"rocksmaths"}
                                 title={"rock's maths"}
                                 startDate={"2024"}
-                                endDate={"Aujourd'hui"}
+                                endDate={"aujourd'hui"}
                                 onClickRef={handlePageChange}
                             />
                             <ProjectCard
@@ -79,6 +80,19 @@ function App() {
                     </section>
                     <section id="about" className="mb-80">à propos</section>
                     <section id="contact" className="mb-80">me contacter</section>
+                </main>
+            ) : page === "cdr" ? (
+                <main className="mx-auto max-w-7xl px-6 sm:px-8 md:px-10">
+                    <ProjectHeader
+                        projectId={"cdr"}
+                        title={"coupe de robotique"}
+                        startDate={"2025"}
+                        endDate={"aujourd'hui"}
+                        description={"Concevoir des robots pour relever des défis techniques concrets."}
+                        technologies={["python", "cpp", "html", "css", "js"]}
+                        shape={["demi-cercle-reverse", "demi-cercle", "losange"]}
+                        color={["black", "orange", "pink"]}
+                    />
                 </main>
             ) : (
                 <main className="mx-auto max-w-7xl px-6 sm:px-8 md:px-10">

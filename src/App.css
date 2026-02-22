@@ -9,12 +9,20 @@
 #notfound{
     min-height: calc(100dvh - var(--navbar-height));
 }
+.project-header{
+    min-height: calc(100dvh - var(--navbar-height));
+    position: relative;
+    overflow: hidden;
+}
 
 .bg-orange-custom {
     background-color: var(--orange);
 }
 .bg-pink-custom {
     background-color: var(--pink);
+}
+.bg-black-custom {
+    background-color: black;
 }
 
 :root{
@@ -65,4 +73,38 @@
     height: var(--normal-size);
     aspect-ratio: 1/1;
     border-radius: 50%;
+}
+.losange{
+    height: var(--normal-size);
+    aspect-ratio: 1/1;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+.demi-losange-reverse{
+    height: var(--normal-size);
+    aspect-ratio: 1/2;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.demi-losange{
+    height: var(--normal-size);
+    aspect-ratio: 1/2;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+.triangle-reverse{
+    height: var(--normal-size);
+    aspect-ratio: 1/1;
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+.triangle{
+    height: var(--normal-size);
+    aspect-ratio: 1/1;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+.carre{
+    height: var(--normal-size);
+    aspect-ratio: 1/1;
+}
+.demi-cercle-reverse{
+    height: var(--normal-size);
+    aspect-ratio: 1/2;
+    border-radius: 0 calc(var(--normal-size) / 2) calc(var(--normal-size) / 2) 0;
 }
