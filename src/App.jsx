@@ -1,8 +1,8 @@
 import './App.css'
-import Navbar from "./components/Navbar.jsx";
-import Footer from "./components/Footer.jsx";
-import CustomCursor from "./components/CustomCursor.jsx";
-import ProjectComponent from "./components/ProjectComponent.jsx";
+import Navbar from "./components/global/Navbar.jsx";
+import Footer from "./components/global/Footer.jsx";
+import CustomCursor from "./components/global/CustomCursor.jsx";
+import ProjectCard from "./components/home/ProjectCard.jsx";
 import {useState} from "react";
 
 function App() {
@@ -45,23 +45,30 @@ function App() {
                         <p className="z-2 font-satoshi sm:text-lg">— steve jobs.</p>
                     </section>
                     <section id="projects" className="mb-80">
-                        <h2 className="text-6xl sm:text-7xl md:text-8xl font-normal md:font-light">mes projets</h2>
+                        <h2 className="text-5xl sm:text-6xl md:text-7xl font-normal md:font-light">mes projets</h2>
                         <div className="mt-7 space-y-0 divide-y divide-black">
-                            <ProjectComponent
+                            <ProjectCard
+                                id={"cdr"}
+                                title={"coupe de robotique"}
+                                startDate={"2025"}
+                                endDate={"Aujourd'hui"}
+                                onClickRef={handlePageChange}
+                            />
+                            <ProjectCard
                                 id={"rocksmaths"}
                                 title={"rock's maths"}
                                 startDate={"2024"}
                                 endDate={"Aujourd'hui"}
                                 onClickRef={handlePageChange}
                             />
-                            <ProjectComponent
+                            <ProjectCard
                                 id={"montaeleves"}
                                 title={"monta élèves"}
                                 startDate={"2022"}
                                 endDate={"2024"}
                                 onClickRef={handlePageChange}
                             />
-                            <ProjectComponent
+                            <ProjectCard
                                 id={"mythikia"}
                                 title={"mythikia"}
                                 startDate={"2021"}

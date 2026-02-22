@@ -1,4 +1,4 @@
-export default function ProjectComponent({ id, title, startDate, endDate, onClickRef }) {
+export default function ProjectCard({ id, title, startDate, endDate, onClickRef }) {
     return (
         <details className="py-8" onClick={() => onClickRef(id, true)}>
             <summary
