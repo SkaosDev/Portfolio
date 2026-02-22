@@ -241,13 +241,13 @@ export default function Navbar({ onClickRef }) {
                                 <ul className="space-y-8 mb-5">
                                     {NAV_LINKS.map((l) => (
                                         <li key={l.href}>
-                                            <a href={l.href} onClick={() => {close(l.href.slice(1));onClickRef("home")}} className="block text-5xl font-normal tracking-tight text-black">
+                                            <a href={l.href} onClick={() => {close(l.href.slice(1));onClickRef("home")}} className="block text-4xl font-normal tracking-tight text-black">
                                                 {l.label}
                                             </a>
                                         </li>
                                     ))}
                                     <li>
-                                        <a href="#contact" onClick={() => {close('contact');onClickRef("home")}} className="block text-5xl font-normal tracking-tight text-black">
+                                        <a href="#contact" onClick={() => {close('contact');onClickRef("home")}} className="block text-4xl font-normal tracking-tight text-black">
                                             me contacter
                                         </a>
                                     </li>

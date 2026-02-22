@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <footer className="w-full border-0 bg-white">
-            <div className="mx-auto max-w-7xl p-6 sm:p-8 md:p-10 py-12">
+            <div className="mx-auto max-w-7xl p-6 sm:p-8 md:p-10 pt-12 pb-6 sm:pb-8 md:pb-10">
                 {/* Séparateur rayé */}
                 <div className="mb-10 h-[2px] w-full bg-repeating-linear-gradient bg-[length:40px_2px]"
                      style={{
@@ -22,32 +22,32 @@ export default function Footer() {
                         © {new Date().getFullYear()} clément royer
                     </p>
                     <div className="flex gap-2 sm:gap-6">
-                        <a 
-                            target="_blank" 
+                        <a
+                            target="_blank"
                             rel="noopener noreferrer"
                             href="https://instagram.com/clement_levrai"
                             aria-label="Instagram"
                         >
                             <div className="icon-small icon-instagram bg-black"></div>
                         </a>
-                        <a 
-                            target="_blank" 
+                        <a
+                            target="_blank"
                             rel="noopener noreferrer"
                             href="https://linkedin.com/in/clementroyer2007"
                             aria-label="LinkedIn"
                         >
                             <div className="icon-small icon-linkedin bg-black"></div>
                         </a>
-                        <a 
-                            target="_blank" 
+                        <a
+                            target="_blank"
                             rel="noopener noreferrer"
                             href="mailto:clement@royer-perso.fr"
                             aria-label="Email"
                         >
                             <div className="icon-small icon-mail bg-black"></div>
                         </a>
-                        <a 
-                            target="_blank" 
+                        <a
+                            target="_blank"
                             rel="noopener noreferrer"
                             href="https://github.com/SkaosDev"
                             aria-label="GitHub"
